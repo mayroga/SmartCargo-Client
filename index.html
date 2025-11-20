@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SmartCargo Client</title>
+  <title>SmartCargo Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>SmartCargo – Plataforma de Análisis</h1>
+  <h1>SmartCargo – Dashboard</h1>
 
-  <h2>Subir fotos de la carga</h2>
-  <input type="file" id="fileInput" multiple>
+  <form id="cargoForm">
+    <input type="text" name="client" placeholder="Client Name" required>
+    <input type="text" name="destination" placeholder="Destination" required>
+    <input type="number" name="boxes" placeholder="Number of Boxes" required>
+    <input type="number" name="weight" placeholder="Total Weight (kg)" required>
+    <input type="file" name="files" multiple required>
+    <button type="submit">Upload & Analyze</button>
+  </form>
 
-  <h2>Seleccionar plan de análisis</h2>
-  <select id="planSelect">
-    <option value="basic">Basic</option>
-    <option value="premium">Premium</option>
-    <option value="enterprise">Enterprise</option>
-  </select>
+  <div id="results"></div>
 
-  <button id="analyzeBtn">Analizar Carga</button>
-
-  <pre id="result"></pre>
-
-  <script src="main.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
